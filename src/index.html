@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drop Down | Tomzyang</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <span class="selectors">
+        <form action="#" method="POST">
+          <select name="status" id="status" multiple>
+            <option value="1">New</option>
+            <option value="2">Open</option>
+            <option value="3">Resolved</option>
+            <option value="4">Verified</option>
+            <option value="5">Closed</option>
+            <option value="6">Postponed</option>
+            <option value="7">Fixed not deployed</option>
+          </select>
+          <input type="submit" value="Submit" />
+        </form>
+      </span>
+    </div>
+    <script>
+      new MultiSelectTag('status', {
+        rounded: true, // default true
+        shadow: true, // default false
+        placeholder: 'Search', // default Search...
+        tagColor: {
+          textColor: '#327b2c',
+          borderColor: '#92e681',
+          bgColor: '#eaffe6'
+        },
+        onChange: function (values) {
+          console.log(values);
+        }
+      });
+    </script>
+    <script>
+        const request = new Request("/myEndpoint", {
+        method: "POST",
+        body: "Hello world",
+        });
+
+        request.body; // ReadableStream
+    </script>
+  </body>
+</html>
